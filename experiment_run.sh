@@ -1,4 +1,5 @@
 ./cpu_utilization.sh &
+CPU_UTIL_PID=$!
 ./softirq.sh &
 # for i in {1..8}
 for i in $(seq 20 20 80)
@@ -19,3 +20,4 @@ do
 done
 
 killall pidstat
+kill $CPU_UTIL_PID

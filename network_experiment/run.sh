@@ -42,9 +42,11 @@ fi
 for i in $(seq 1 $end_range)
 do
     if [ -n "$1" ] && [ "$1" != "--force" ]; then
-        CONTAINER_ID=$(sudo docker run -v $PWD/logs:/logs -d --rm --cap-add=NET_ADMIN netperf_image -- $i $1 -H $NETSERVER_IP -l 64 -t TCP_STREAM -- -m 64)
+        # CONTAINER_ID=$(sudo docker run -v $PWD/logs:/logs -d --rm --cap-add=NET_ADMIN netperf_image -- $i $1 -H $NETSERVER_IP -l 64 -t TCP_STREAM -- -m 64)
+        sudo docker run -v $PWD/logs:/logs -d --rm --cap-add=NET_ADMIN netperf_image -- $i $1 -H $NETSERVER_IP -l 64 -t TCP_STREAM -- -m 64 &
     else
-        CONTAINER_ID=$(sudo docker run -v $PWD/logs:/logs -d --rm --cap-add=NET_ADMIN netperf_image -- $i -H $NETSERVER_IP -l 64 -t TCP_STREAM -- -m 64)
+        # CONTAINER_ID=$(sudo docker run -v $PWD/logs:/logs -d --rm --cap-add=NET_ADMIN netperf_image -- $i -H $NETSERVER_IP -l 64 -t TCP_STREAM -- -m 64)
+        sudo docker run -v $PWD/logs:/logs -d --rm --cap-add=NET_ADMIN netperf_image -- $i -H $NETSERVER_IP -l 64 -t TCP_STREAM -- -m 64 &
     fi
     # ../tc_limits.sh $CONTAINER_ID
 done

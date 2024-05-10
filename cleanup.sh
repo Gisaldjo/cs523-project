@@ -12,4 +12,5 @@ sudo docker rmi $(sudo docker images -q)
 if [ "$1" == "--logs" ]; then
     rm -f cpu_experiment/logs/*
     rm -f network_experiment/logs/*
+    rm -f softirq_logs/*
 fi

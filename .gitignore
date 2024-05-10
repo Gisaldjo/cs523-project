@@ -4,3 +4,4 @@ netserver.log
 output*.log
 sysbench*.log
 !logs/*/*.log
+!logs/*/softirq/*.log

@@ -9,5 +9,5 @@ do
     pidstat -p $pid 1 > "softirq_logs/softirq_$pid.log" &
 done
 
-sleep 60
+sleep 600
 killall pidstat

@@ -1,4 +1,4 @@
 softirq_*.log
 netperf_*.log
 netserver.log
-output.log
+output*.log

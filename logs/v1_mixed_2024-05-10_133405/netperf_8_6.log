@@ -1,9 +1,0 @@
-Fri May 10 18:29:20 UTC 2024________START_________
-MIGRATED TCP STREAM TEST from 0.0.0.0 (0.0.0.0) port 0 AF_INET to 172.17.0.2 () port 0 AF_INET : demo
-Recv   Send    Send                          
-Socket Socket  Message  Elapsed              
-Size   Size    Size     Time     Throughput  
-bytes  bytes   bytes    secs.    10^6bits/sec  
-
-131072  16384     64    64.04      25.62   
-Fri May 10 18:30:24 UTC 2024________DONE_________

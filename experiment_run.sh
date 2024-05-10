@@ -1,7 +1,7 @@
 ./cpu_utilization.sh &
 ./softirq.sh &
 # for i in {1..8}
-for i in $(seq 5 5 20)
+for i in $(seq 20 20 80)
 do
     echo "---------------------"
     echo "$(date) - Running experiment round $i"

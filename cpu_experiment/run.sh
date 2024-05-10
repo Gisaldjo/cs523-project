@@ -8,7 +8,7 @@ else
     sudo docker build -t cpu_experiment .
 fi
 CURR_TIME=$(date)
-CONTAINER_ID=$(sudo docker run --cpus=4 -d --rm cpu_experiment)
+CONTAINER_ID=$(sudo docker run --cpus=16 -d --rm cpu_experiment)
 
 # echo cpu.max
 # cat /sys/fs/cgroup/system.slice/docker-$CONTAINER_ID.scope/cpu.max

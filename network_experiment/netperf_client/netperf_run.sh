@@ -1,8 +1,8 @@
 #!/bin/bash
 
 tc qdisc add dev eth0 handle 1: ingress
-tc filter add dev eth0 parent ffff: protocol ip prio 50 u32 match ip src 0.0.0.0/0 police rate 30mbit burst 10k drop flowid :1
-tc qdisc add dev eth0 root tbf rate 30mbit latency 25ms burst 10k
+tc filter add dev eth0 parent ffff: protocol ip prio 50 u32 match ip src 0.0.0.0/0 police rate 10mbit burst 10k drop flowid :1
+tc qdisc add dev eth0 root tbf rate 10mbit latency 25ms burst 10k
 
 if [ -n "$2" ] && [ "$2" != "-H" ]; then
     log_path="/logs/netperf_$2_$1.log"

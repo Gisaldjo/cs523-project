@@ -1,0 +1,26 @@
+---------------------
+Fri 10 May 2024 04:15:58 PM CDT - Running experiment round 5
+---------------------
+Netserver is not running.
+Netserver Image does not exist
+74e8b3690395530ca8ebf05fb12bf5357e7349be8d98452a5b24eaf2bcbcdab4
+Netserver IP: 172.17.0.2
+Netperf Image does not exist
+---------------------
+Fri 10 May 2024 04:17:20 PM CDT - Running experiment round 10
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+---------------------
+Fri 10 May 2024 04:18:43 PM CDT - Running experiment round 15
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+---------------------
+Fri 10 May 2024 04:20:12 PM CDT - Running experiment round 20
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists

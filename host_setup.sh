@@ -16,3 +16,4 @@ sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin sysstat
 mkdir cpu_experiment/logs
 mkdir network_experiment/logs
+mkdir softirq_logs

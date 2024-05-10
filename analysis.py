@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 
 softirq_logs_path = "softirq_logs/"

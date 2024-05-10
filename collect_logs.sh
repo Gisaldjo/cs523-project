@@ -3,6 +3,6 @@
 timestamp=$(date +"%Y-%m-%d_%H%M%S")
 
 mkdir logs/mixed_$timestamp
-mv cpu_experiment/logs/* logs/$timestamp/
-mv network_experiment/logs/* logs/$timestamp/
-mv output.log logs/$timestamp/
+mv cpu_experiment/logs/* logs/mixed_$timestamp/
+mv network_experiment/logs/* logs/mixed_$timestamp/
+mv output.log logs/mixed_$timestamp/

@@ -8,6 +8,3 @@ for pid in $pids
 do
     pidstat -p $pid 1 > "softirq_logs/softirq_$pid.log" &
 done
-
-sleep 600
-killall pidstat

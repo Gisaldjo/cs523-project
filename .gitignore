@@ -2,6 +2,7 @@ softirq_*.log
 netperf_*.log
 netserver.log
 output*.log
+cpu_utilization.log
 sysbench*.log
 !logs/*/*.log
 !logs/*/softirq/*.log

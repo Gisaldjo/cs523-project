@@ -1,3 +1,5 @@
+./cpu_utilization.sh &
+./softirq.sh &
 for i in {1..8}
 do
     echo "---------------------"
@@ -14,3 +16,5 @@ do
         sleep 10
     done
 done
+
+killall pidstat

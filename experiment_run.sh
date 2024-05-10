@@ -13,6 +13,7 @@ do
     # cd ../cpu_experiment
     # ./run.sh $i
     cd ../
+    sleep 30
     while [ $(sudo docker ps -a | wc -l) -gt 2 ]
     do
         sleep 10

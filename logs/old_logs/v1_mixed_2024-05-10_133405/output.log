@@ -1,0 +1,58 @@
+---------------------
+Fri 10 May 2024 01:17:14 PM CDT - Running experiment round 1
+---------------------
+Netserver is not running.
+Netserver Image does not exist
+1a30d39eb66823626a9b2c25159af86124ef0352ac6a06f83a7edae79b445a67
+Netserver IP: 172.17.0.2
+Netperf Image does not exist
+Building Sysbench image
+---------------------
+Fri 10 May 2024 01:19:51 PM CDT - Running experiment round 2
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists
+---------------------
+Fri 10 May 2024 01:21:20 PM CDT - Running experiment round 3
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists
+---------------------
+Fri 10 May 2024 01:22:51 PM CDT - Running experiment round 4
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists
+---------------------
+Fri 10 May 2024 01:24:24 PM CDT - Running experiment round 5
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists
+---------------------
+Fri 10 May 2024 01:25:59 PM CDT - Running experiment round 6
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists
+---------------------
+Fri 10 May 2024 01:27:35 PM CDT - Running experiment round 7
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists
+---------------------
+Fri 10 May 2024 01:29:12 PM CDT - Running experiment round 8
+---------------------
+Netserver is already running.
+Netserver IP: 172.17.0.2
+Netperf Image exists
+Sysbench Image exists

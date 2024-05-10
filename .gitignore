@@ -6,3 +6,4 @@ cpu_utilization.log
 sysbench*.log
 !logs/*/*.log
 !logs/*/softirq/*.log
+!logs/old_logs/*/*.log

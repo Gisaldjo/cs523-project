@@ -6,7 +6,7 @@ import pandas
 import matplotlib.pyplot as plt
 
 
-def parse_softirq_logs(path):
+def parse_softirq_logs(path, prefix):
     softirq_logs_path = f"logs/{path}/softirq/"
     softirq_logs = os.listdir(softirq_logs_path)
 
@@ -25,11 +25,11 @@ def parse_softirq_logs(path):
     plt.figure(figsize=(10, 6))
     plt.plot(df['Time'], df['Value'])
 
-    plt.title('Softirq Cpu Util over Time')
+    plt.title(f'(cgroups {prefix}) Softirq Cpu Util over Time')
     plt.xlabel('Time')
     plt.ylabel('Cpu Utilization')
 
-    plt.savefig("softirq_threads.png")
+    plt.savefig(f"softirq_cpu_util_{prefix}.png")
     
 def parse_sysbench_logs(prefix):
     logs = [p for p in os.listdir("logs/") if p.startswith(prefix)]
@@ -55,13 +55,13 @@ def parse_sysbench_logs(prefix):
     plt.figure(figsize=(10, 6))
     plt.plot(df['Num of pods'], df['Avg Latency'])
 
-    plt.title('Sysbench Avg Latency vs Netperf Number of pods')
+    plt.title(f'(cgroups {prefix.split("_")[1]}) Sysbench Avg Latency vs Netperf Number of pods')
     plt.xlabel('Num of pods')
     plt.ylabel('Avg Latency')
 
     plt.savefig(f"avg_latency_{prefix}.png")
     
-def parse_cpu_util(path):
+def parse_cpu_util(path, prefix):
     cpu_util_log = f"logs/{path}/cpu_utilization.log"
     if not os.path.exists(cpu_util_log):
         return
@@ -82,11 +82,11 @@ def parse_cpu_util(path):
     plt.figure(figsize=(10, 6))
     plt.plot(df['Time'], df['CPU Utilization'])
 
-    plt.title('Total Cpu Util over Time')
+    plt.title(f'(cgroups {prefix}) Total Cpu Util Over Time')
     plt.xlabel('Time')
     plt.ylabel('Total Cpu Utilization %')
 
-    plt.savefig("cpu_util.png")
+    plt.savefig(f"cpu_util_{prefix}.png")
 
 def parse_netperf_throughput(prefix):
     logs = [p for p in os.listdir("logs/") if p.startswith(prefix)]
@@ -114,17 +114,20 @@ def parse_netperf_throughput(prefix):
     plt.figure(figsize=(10, 6))
     plt.plot(df['Num of pods'], df['Throughput'])
 
-    plt.title('Netperf Throughput vs Number of pods')
+    plt.title(f'(cgroups {prefix.split("_")[1]}) Netperf Throughput vs Number of pods')
     plt.xlabel('Num of pods')
     plt.ylabel('Throughput')
-    plt.xticks([5, 10, 15, 20])
+    plt.xticks([20, 40, 60, 80])
     plt.savefig(f"throughput_{prefix}.png")
     
 if __name__ == "__main__":
-    path = "v1_mixed_2024-05-10_143601"
-    # parse_softirq_logs(path)
-    parse_cpu_util(path)
-    # parse_netperf_throughput("network_v2")
-    # parse_netperf_throughput("network_v1")
-    # parse_sysbench_logs("v1")
-    # parse_sysbench_logs("v2")
+    v2_path = "mixed_v2_2024-05-10_205439"
+    v1_path = "mixed_v1_2024-05-10_205423"
+    parse_softirq_logs(v2_path, "v2")
+    parse_softirq_logs(v1_path, "v1")
+    parse_cpu_util(v2_path, "v2")
+    parse_cpu_util(v1_path, "v1")
+    parse_netperf_throughput("network_v2")
+    parse_netperf_throughput("network_v1")
+    parse_sysbench_logs("mixed_v1")
+    parse_sysbench_logs("mixed_v2")

@@ -55,9 +55,9 @@ def parse_sysbench_logs(prefix):
     plt.figure(figsize=(10, 6))
     plt.plot(df['Num of pods'], df['Avg Latency'])
 
-    plt.title(f'(cgroups {prefix.split("_")[1]}) Sysbench Avg Latency vs Netperf Number of pods')
-    plt.xlabel('Num of pods')
-    plt.ylabel('Avg Latency')
+    plt.title(f'(cgroups {prefix.split("_")[1]}) Sysbench Avg Latency vs Number of Netperf Pods')
+    plt.xlabel('Num of Netperf Pods')
+    plt.ylabel('Sysbench Avg Latency (ms)')
 
     plt.savefig(f"avg_latency_{prefix}.png")
     
@@ -114,9 +114,9 @@ def parse_netperf_throughput(prefix):
     plt.figure(figsize=(10, 6))
     plt.plot(df['Num of pods'], df['Throughput'])
 
-    plt.title(f'(cgroups {prefix.split("_")[1]}) Netperf Throughput vs Number of pods')
-    plt.xlabel('Num of pods')
-    plt.ylabel('Throughput')
+    plt.title(f'(cgroups {prefix.split("_")[1]}) Netperf Network Throughput vs Number of Pods')
+    plt.xlabel('Num of Pods')
+    plt.ylabel('Avg Network Throughput Per Pod (mbps)')
     plt.xticks([20, 40, 60, 80])
     plt.savefig(f"throughput_{prefix}.png")
     
